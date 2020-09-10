@@ -1,0 +1,14 @@
+server:
+  port: 8083
+server.error:
+  include-messages: always
+spring.cloud.stream:
+  function:
+    definition: supplier;consumer
+  bindings:
+    supplier-out-0:
+      destination: order-created
+    consumer-in-0:
+      destination: order-updated
+spring.jackson:
+  default-property-inclusion: NON_NULL
